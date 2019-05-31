@@ -1,6 +1,6 @@
-const CONSTANTS = require('./constants');
+const CONSTANTS = require('../constants');
 
-const func = require('./functions');
+const func = require('../functions');
 
 const arr_f = [0, 1];
 
