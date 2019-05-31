@@ -1,7 +1,5 @@
-const A = -1,
-    B = 0,
-    N = 22,
-    Eps = (B - A) / (N - 1);
+const CONSTANTS = require('./constants');
+const EPS = Math.abs((CONSTANTS.B - CONSTANTS.A) / (CONSTANTS.N - 1));
 
 const func = (x) => Math.pow(x, 2) + 6 * (Math.pow(Math.E, (0.15 * x)));
 
@@ -24,11 +22,11 @@ const goldenRatio = (a, b) => {
             yH = aH + bH - calcY(a, b),
             zH = calcY(a, b);
 
-        if (calcDelta(aH, bH) <= Eps) {
+        if (calcDelta(aH, bH) <= EPS) {
             console.log(`Всё заебись. aH = ${aH} | bH = ${bH}`);
             console.log("Середина интервала: " + ((aH + bH) / 2));
 
-        } else if (calcDelta(aH, bH) > Eps) {
+        } else if (calcDelta(aH, bH) > EPS) {
             console.log(`Хуйня, давай снова. aH = ${aH} | bH = ${bH}`);
             goldenRatio(aH, bH);
         }
@@ -41,15 +39,15 @@ const goldenRatio = (a, b) => {
             yH = calcZ(a, b),
             zH = aH + bH - calcZ(a, b);
 
-        if (calcDelta(aH, bH) <= Eps) {
+        if (calcDelta(aH, bH) <= EPS) {
             console.log(`Всё заебись. aH = ${aH} | bH = ${bH}`);
             console.log("Середина интервала: " + ((aH + bH) / 2));
 
-        } else if (calcDelta(aH, bH) > Eps) {
+        } else if (calcDelta(aH, bH) > EPS) {
             console.log(`Хуйня, давай снова. aH = ${aH} | bH = ${bH}`);
             goldenRatio(aH, bH);
         }
     }
 };
 
-goldenRatio(A, B);
+goldenRatio(CONSTANTS.A, CONSTANTS.B);
