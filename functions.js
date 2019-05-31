@@ -1,0 +1,1 @@
+module.exports.variant1 = (x) => Math.pow(x, 2) + 6 * (Math.pow(Math.E, (0.15 * x)));
