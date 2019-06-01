@@ -1,7 +1,7 @@
-const CONSTANTS = require('./constants');
+const CONSTANTS = require('../constants');
 const EPS = Math.abs((CONSTANTS.B - CONSTANTS.A) / (CONSTANTS.N - 1));
 
-const func = require('./functions');
+const func = require('../functions');
 
 const calcY = (a, b) => a + 0.382 * (b - a);
 const calcZ = (a, b) => a + b - calcY(a, b);
