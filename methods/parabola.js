@@ -34,7 +34,7 @@ const h = (Math.random() * (CONSTANTS.B - CONSTANTS.A) + CONSTANTS.A) * 0.01;
 console.log(h);
 
 let i = CONSTANTS.N;
-const calcaMin = (x0, h) => {
+const calcMin = (x0, h) => {
     let x = x0;
     while (i > 0) {
         i--;
@@ -44,4 +44,4 @@ const calcaMin = (x0, h) => {
     }
 };
 
-calcaMin(x0, h);
+calcMin(x0, h);
